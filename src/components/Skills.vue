@@ -1,17 +1,15 @@
 <template>
     <div class="hello">
         <div class="holder">
+            <input type="text" placeholder="Enter your skills.." v-model="skill">
+            {{skill}}
             <ul>
-                <li v-for="(data,index) in skills">
+                <li v-for="(data,index) in skills" :key="index">
                     {{index}}. {{data.skill}}
                 </li>
             </ul>
-            <p v-if="skills.length > 1"> Length of skill is more than 1</p>
-            <p v-else>Length of skill is less than 1</p>
+            <p>These are the skills that you posses</p>
         </div>
-        <div v-bind:class="alertObject"></div>
-        <br>
-        <div v-bind:style="{background: bgColor, width: bgWidth, height: bgHeight}"></div>
     </div>
 </template>
 
@@ -35,13 +33,7 @@
                     },
 
                 ],
-                alertObject:{
-                    alert: true,
-                    another_class: true
-                },
-                bgColor: 'red',
-                bgWidth: '100%',
-                bgHeight: '30px'
+                skill: ''
 
             }
         }
@@ -50,6 +42,45 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style src="./skill-style.css" scoped>
+<style scoped>
+
+  .holder {
+    background: #fff;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  ul li {
+    padding: 20px;
+    font-size: 1.3em;
+    background-color: #E0EDF4;
+    border-left: 5px solid #3EB3F6;
+    margin-bottom: 2px;
+    color: #3E5252;
+  }
+
+  p {
+    text-align:center;
+    padding: 30px 0;
+    color: gray;
+  }
+
+  .container {
+    box-shadow: 0px 0px 40px lightgray;
+  }
+
+    input {
+    width: calc(100% - 40px);
+    border: 0;
+    padding: 20px;
+    font-size: 1.3em;
+    background-color: #323333;
+    color: #687F7F;
+  }
 
 </style>
+
