@@ -9,6 +9,7 @@
             <p v-if="skills.length > 1"> Length of skill is more than 1</p>
             <p v-else>Length of skill is less than 1</p>
         </div>
+        <div v-bind:class="{ alert: showAlert }"></div>
     </div>
 </template>
 
@@ -31,7 +32,8 @@
                         "skill" : "Data Analytics"
                     },
 
-                ]
+                ],
+                showAlert: true
             }
         }
 
