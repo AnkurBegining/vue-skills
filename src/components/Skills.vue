@@ -1,8 +1,10 @@
 <template>
     <div class="hello">
         <div class="holder">
-            <input type="text" placeholder="Enter your skills.." v-model="skill">
-            {{skill}}
+            <form @submit.prevent="addSkill" >
+                <input type="text" placeholder="Enter your skills.." v-model="skill">
+                {{skill}}
+            </form>
             <ul>
                 <li v-for="(data,index) in skills" :key="index">
                     {{index}}. {{data.skill}}
@@ -35,6 +37,12 @@
                 ],
                 skill: ''
 
+            }
+        },
+        methods: {
+            addSkill() {
+                this.skills.push({skill: this.skill});
+                this.skill = '';
             }
         }
 
