@@ -5,7 +5,6 @@
                 <li v-for="(data,index) in skills">
                     {{index}}. {{data.skill}}
                 </li>
-                <br>
             </ul>
             <p v-if="skills.length > 1"> Length of skill is more than 1</p>
             <p v-else>Length of skill is less than 1</p>
@@ -40,22 +39,6 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-    h3 {
-        margin: 40px 0 0;
-    }
+<style src="./skill-style.css" scoped>
 
-    ul {
-        list-style-type: none;
-        padding: 0;
-    }
-
-    li {
-        display: inline-block;
-        margin: 0 10px;
-    }
-
-    a {
-        color: #42b983;
-    }
 </style>
